@@ -3,9 +3,9 @@ import { getAllPelis, getOnePeli, createPeli } from '../../controllers/pelis.con
 
 const router = Router()
 
-router.get('/pelis', getAllPelis)
-router.get('/pelis/:id', getOnePeli)
-router.post('/pelis', createPeli)
+router.get('/', getAllPelis)
+router.get('/:id', getOnePeli)
+router.post('/', createPeli)
 
 
 
