@@ -1,12 +1,13 @@
-import express from 'express'
-import cors from 'cors'
-import routes from '../routes/index.routes.js'
+import express from 'express';
+import pelisRoutes from '../routes/api/pelis.routes.js';
 
-const app = express()
+const app = express();
 
-app.use(cors())
-app.use(express.json())
+app.use(express.json());
+app.use(pelisRoutes);
 
-app.use('/', routes)
+app.get('/', (req, res) => {
+  res.json({ status: 'API OK' });
+});
 
-export default app
+export default app;
