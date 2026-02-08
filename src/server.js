@@ -8,7 +8,6 @@ const startServer = async () => {
 		if (process.env.DB_URL) {
 			console.log('conectando base de datos...');
 			await sequelize.authenticate();
-			await sequelize.sync({ force: false });
 			await sequelize.sync({ alter: true });
 			console.log('base de datos conectada');
 		}
