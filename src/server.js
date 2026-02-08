@@ -13,7 +13,7 @@ const startServer = async () => {
 			console.log('base de datos conectada');
 		}
 		app.listen(PORT, () => {
-			console.log('servidor corriendo en http://localhost:3000');
+			console.log(`servidor corriendo en http://localhost:${PORT}`);
 		});
 	} catch (error) {
 		console.log(`error al conectar base de datos ${error}`);
