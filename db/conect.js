@@ -1,13 +1,15 @@
-import pg from 'pg';
 import { Sequelize } from 'sequelize';
-import dotenv from 'dotenv';
 
-dotenv.config();
-
-const sequelize = new Sequelize(process.env.DB_URL, {
-  dialect: 'postgres',
-  dialectModule: pg,
-  logging: false
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+	dialect: 'postgres',
+	protocol: 'postgres',
+	logging: false,
+	dialectOptions: {
+		ssl: {
+			require: true,
+			rejectUnauthorized: false,
+		},
+	},
 });
 
 export default sequelize;
